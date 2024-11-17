@@ -1,6 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: text/plain");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
 
 $superheroes = [
   [
@@ -65,9 +66,49 @@ $superheroes = [
   ], 
 ];
 ?>
-
+<?php function nohero(){
+    ?>
 <ul>
-<?php foreach ($superheroes as $superhero): ?>
+<?php foreach ($GLOBALS['superheroes'] as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php endforeach; 
+ ?>
+</ul> 
+<?php
+}
+?>
+
+<?php 
+function findhero($info){
+
+$info = htmlspecialchars($info, ENT_QUOTES, 'UTF-8');
+    if (!preg_match("/^[a-zA-Z ]*$/", $info)) {
+        echo "Invalid input";
+        exit;
+}
+    $flag= false;
+    if ($info==""){
+        $flag=true;
+        nohero();
+
+    } else{
+        foreach($GLOBALS['superheroes'] as $superhero){
+            if ($info==$superhero['name'] or $info==$superhero['alias']){ ?>
+                <h3><?= strtoupper($superhero['alias']);?> </h3>
+                <h4><?='A.K.A '.strtoupper( $superhero['name']);?> </h4>
+                <p><?= $superhero['biography'];?></p>
+                <?php
+                $flag=true;
+                break;
+            }
+        
+    }
+    }
+    if (!$flag) { ?>
+        <h5>SUPERHERO NOT FOUND</h5> <?php
+    }
+    
+} 
+
+$query= $_GET['query'];
+findhero($query);

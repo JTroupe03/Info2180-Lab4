@@ -1,0 +1,97 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #000000;
+}
+
+.section{
+    padding-top: 10px;
+    padding-right: 200px;
+    padding-bottom: 30px;
+    padding-left: 200px;
+}
+
+/* Header Section */
+h1 {
+    background-color: #2891bb; /* Blue header background */
+    color: white; /* White text for the header */
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Subheading and Input Section */
+p {
+    text-align: left;
+    font-size: 16px;
+    color: #000000;
+    margin: 15px 0;
+}
+
+#Search {
+    display: inline-block;
+    margin: 0 auto 10px;
+    width: 100%;
+    max-width: 900px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#searchButton {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: red; /* Red background for button */
+    color: white; /* White text */
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #c9302c; /* Slightly darker red on hover */
+}
+
+.result{
+    color: black;
+}
+
+/* Results Section */
+h2 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 25px;
+    color: #000000;
+    margin: 20px 0 10px;
+}
+
+hr {
+    margin: 10px auto;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h4{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+h5{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
